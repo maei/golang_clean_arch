@@ -23,3 +23,11 @@ func (r *Serial) Encode(input *shortener.Redirect) ([]byte, error) {
 	}
 	return rawMsg, nil
 }
+
+func (r *Serial) Encode3424(input *shortener.Redirect) ([]byte, error) {
+	rawMsg, err := json.Marshal(input)
+	if err != nil {
+		return nil, errors.Wrap(err, "serializer.Redirect.Encode")
+	}
+	return rawMsg, nil
+}
